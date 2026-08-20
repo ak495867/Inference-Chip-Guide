@@ -777,24 +777,6 @@ This is not a foundry process guide, a complete RTL implementation, a guaranteed
 
 ---
 
-## GitHub Rendering Notes
-
-This guide is formatted for GitHub Markdown:
-
-| Element | GitHub-friendly choice |
-| --- | --- |
-| Inline math | `$...$` |
-| Display math | `$$...$$` |
-| Diagrams | Mermaid fenced blocks and ASCII diagrams |
-| Code-like material | Fenced blocks with language labels |
-| Tables | Standard Markdown pipe tables |
-| Citations | Reference-style Markdown links |
-| Layout | Headings and paragraphs instead of custom HTML grids |
-
-If Mermaid is disabled in a repository theme, the surrounding text and ASCII diagrams remain useful. If a particular LaTeX command does not render in a downstream Markdown viewer, replace it with simpler standard notation rather than depending on a custom package.
-
----
-
 ## References
 
 [1]: https://nvdla.org/hw/v1/hwarch.html "NVDLA Hardware Architectural Specification"
