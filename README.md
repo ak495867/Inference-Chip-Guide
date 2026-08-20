@@ -2,7 +2,7 @@
 
 > *The fastest neural-network chip is not the one with the biggest multiply array. It is the one that spends the least time waiting for data, doing useless work, or asking the compiler for forgiveness.*
 
-This guide explains how to design a chip for neural-network inference acceleration. It is written as a **GitHub-ready engineering methodology document**, with compatible LaTeX, Mermaid diagrams, quantitative models, architecture tradeoffs, and staged implementation milestones.
+This guide explains how to design a chip for neural-network inference acceleration.
 
 The goal is not to copy a named accelerator. The goal is to learn how to move from a workload and a constraint envelope to a defensible hardware architecture.
 
