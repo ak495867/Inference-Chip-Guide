@@ -222,6 +222,7 @@ $$
 
 The values depend strongly on technology, voltage, physical distance, access width, and implementation. Use the equation to partition measurements, not to pretend that one universal energy-per-access table applies to every chip.
 
+
 ### Efficiency metrics
 
 Report more than peak TOPS:
@@ -457,10 +458,10 @@ Sparsity can reduce storage, memory traffic, and arithmetic, but only when the h
 A sparse representation needs metadata. The metadata consumes bandwidth, decoder area, buffer capacity, and control cycles. The real question is:
 
 $$
-\text{benefit of skipped work}
->
-\text{cost of detection} + \text{metadata} + \text{irregular movement}.
+\text{benefit of skipped work} > \text{cost of detection} + \text{metadata} + \text{irregular movement}.
 $$
+
+
 
 NVDLA documents sparse compression as a bandwidth optimization and also warns that hardware atomic sizing can reduce utilization for poorly aligned layers.[1] Sparsity and alignment must therefore be evaluated together.
 
@@ -534,12 +535,10 @@ flowchart TD
 The compiler needs a cost model that estimates:
 
 $$
-\text{cost}
-= \alpha T_{\text{latency}}
-+ \beta E_{\text{energy}}
-+ \gamma M_{\text{memory}}
-+ \delta R_{\text{risk}},
+\text{cost} = \alpha T_{\text{latency}} - \beta E_{\text{energy}} - \gamma M_{\text{memory}} - \delta R_{\text{risk}}.
 $$
+
+
 
 where the weights reflect deployment priorities. The coefficients should be calibrated against hardware measurements rather than treated as universal constants.
 
