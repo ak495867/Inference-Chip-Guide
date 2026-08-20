@@ -158,19 +158,19 @@ $$
 there are approximately:
 
 $$
-\operatorname{MACs} = MKN,
+\text{MACs} = MKN,
 $$
 
 and twice as many arithmetic operations if one MAC is counted as a multiply plus an add:
 
 $$
-\operatorname{FLOPs\ or\ Ops} \approx 2MKN.
+\text{FLOPs or Ops} \approx 2MKN.
 $$
 
 For a two-dimensional convolution with output height $$H_o$$, output width $$W_o$$, input channels $$C_i$$, output channels $$C_o$$, and kernel size $$K_h \times K_w$$:
 
 $$
-\operatorname{MACs}
+\text{MACs}
 = H_o W_o C_o C_i K_h K_w.
 $$
 
@@ -227,19 +227,19 @@ The values depend strongly on technology, voltage, physical distance, access wid
 Report more than peak TOPS:
 
 $$
-\operatorname{Utilization}
+\text{Utilization}
 = \frac{\text{useful executed operations}}
 {\text{peak operations available}}.
 $$
 
 $$
-\operatorname{Energy\ efficiency}
+\text{Energy efficiency}
 = \frac{\text{useful operations}}
 {\text{joules}}.
 $$
 
 $$
-\operatorname{Energy\ per\ inference}
+\text{Energy per inference}
 = \frac{\text{total joules during the measured inference}}
 {\text{completed inferences}}.
 $$
@@ -359,8 +359,8 @@ The NVDLA architecture explicitly uses an internal convolution buffer to avoid r
 Tiling partitions a tensor into blocks that fit a local memory. For a matrix multiplication, choose tile sizes $$M_t$$, $$N_t$$, and $$K_t$$ such that:
 
 $$
-\operatorname{bytes}(A_t) + \operatorname{bytes}(B_t) + \operatorname{bytes}(C_t)
-\leq \operatorname{SRAM}_{\text{available}}.
+\text{bytes}(A_t) + \text{bytes}(B_t) + \text{bytes}(C_t)
+\leq \text{SRAM}_{\text{available}}.
 $$
 
 The tile must also fit the compute array's preferred dimensions and preserve enough reuse to amortize movement. A tile that fits memory but creates poor array utilization is not a good tile.
@@ -394,15 +394,14 @@ Inference acceleration often depends on lower precision, but bit width alone doe
 A quantized value may be represented as:
 
 $$
-q = \operatorname{clamp}
+q = \text{clamp}
 \left(
-\operatorname{round}\left(\frac{x}{s}\right) + z,
+\text{round}\left(\frac{x}{s}\right) + z,
 q_{\min}, q_{\max}
 \right),
 $$
 
-where $$s$$ is a scale, $$z$$ is a zero point, and $$[q_{\min}, q_{\max}]
-$$ is the integer range.
+where $$s$$ is a scale, $$z$$ is a zero point, and $$[q_{\min}, q_{\max}]$$ is the integer range.
 
 The dequantized approximation is:
 
@@ -535,7 +534,7 @@ flowchart TD
 The compiler needs a cost model that estimates:
 
 $$
-\operatorname{cost}
+\text{cost}
 = \alpha T_{\text{latency}}
 + \beta E_{\text{energy}}
 + \gamma M_{\text{memory}}
