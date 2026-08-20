@@ -198,10 +198,7 @@ A layer with low arithmetic intensity is memory-bound. Adding more MAC units wil
 A first-order layer latency estimate can be written as:
 
 $$
-T_{\text{layer}}
-\approx \max(T_{\text{compute}}, T_{\text{memory}})
-+ T_{\text{launch}}
-+ T_{\text{sync}}.
+T_{\text{layer}} \approx \max(T_{\text{compute}}, T_{\text{memory}}) - T_{\text{launch}} - T_{\text{sync}}.
 $$
 
 The `max` is important. With double buffering and effective overlap, compute and transfer can proceed concurrently. Without overlap, the terms may add instead.
@@ -211,14 +208,9 @@ The `max` is important. With double buffering and effective overlap, compute and
 A coarse energy model is:
 
 $$
-E_{\text{inference}}
-= E_{\text{compute}}
-+ E_{\text{SRAM}}
-+ E_{\text{DRAM}}
-+ E_{\text{interconnect}}
-+ E_{\text{control}}
-+ E_{\text{leakage}}.
+E_{\text{inference}} = E_{\text{compute}} - E_{\text{SRAM}} - E_{\text{DRAM}} - E_{\text{interconnect}} - E_{\text{control}} - E_{\text{leakage}}.
 $$
+
 
 The values depend strongly on technology, voltage, physical distance, access width, and implementation. Use the equation to partition measurements, not to pretend that one universal energy-per-access table applies to every chip.
 
